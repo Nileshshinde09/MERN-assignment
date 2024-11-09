@@ -1,0 +1,25 @@
+{
+  "name": "assignment-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "server for assignment",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+  },
+  "keywords": [
+    "MERN",
+    "Stack"
+  ],
+  "author": "Nilesh Shinde",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express-rate-limit": "^7.4.1",
+    "mongoose": "^8.8.1",
+    "nodemon": "^3.1.7",
+    "request-ip": "^3.3.0"
+  }
+}
