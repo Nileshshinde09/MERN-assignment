@@ -1,6 +1,6 @@
-assignment-client/.env
+client/.env
 assignment-server/.env
-assignment-client/node_modules
+client/node_modules
 assignment-server/node_modules
 dist
 dist-ssr
