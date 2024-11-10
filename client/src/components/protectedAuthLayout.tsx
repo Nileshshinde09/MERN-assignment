@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+
 interface ProtectedAuthLayoutProps {
   children: React.ReactNode;
   authentication: boolean;
 }
+
 const ProtectedAuthLayout: React.FC<ProtectedAuthLayoutProps> = ({
   children,
-  authentication = true,
-}):React.ReactNode => {
+  authentication,
+}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [loader, setLoader] = useState(true);
-  const authStatus = true;
+
+  const authStatus = true; 
   useEffect(() => {
-    if (authentication) {
+    if (!authentication) {
       navigate("/login", { state: { from: location } });
-    } 
-    else {
-      if (authStatus) {
-        const redirectTo = location.state?.from?.pathname || "/";
+    } else if (!authStatus) {
+      setLoader(false); 
+    } else {
+      const redirectTo = location.state?.from?.pathname || "/";
+      if (location.pathname !== redirectTo) {
         navigate(redirectTo);
       }
+      setLoader(false); 
     }
-    setLoader(false);
-  }, [authentication, navigate, location]);
+  }, [authentication, authStatus, navigate, location]);
 
   return loader ? (
     <h1 className="w-full text-center">Loading...</h1>

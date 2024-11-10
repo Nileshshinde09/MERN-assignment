@@ -1,9 +1,9 @@
 import React from 'react'
-
-const Login = () => {
+import { LoginForm } from '../components'
+const Login = ():React.ReactNode => {
   return (
-    <div>
-      
+    <div className='mt-10'>
+      <LoginForm/>
     </div>
   )
 }
