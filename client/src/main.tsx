@@ -4,7 +4,5 @@ import App from "./App.tsx";
 import Provider from "./providers/provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <Provider>
-    <App />
-  </Provider>
+  <Provider/>
 );

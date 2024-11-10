@@ -1,0 +1,5 @@
+import MARIO_GAME_ANIMATION_404_ERROR_PAGE_V3 from "/mario404.gif"
+
+export{
+    MARIO_GAME_ANIMATION_404_ERROR_PAGE_V3
+}
